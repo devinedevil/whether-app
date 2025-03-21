@@ -220,7 +220,7 @@ function drawForecastChart(city, forecastList) {
     }
   });
 }
-// Theme toggle
+
 const themeIcon = document.getElementById('themeIcon');
 
 themeIcon.addEventListener('click', () => {
@@ -229,7 +229,7 @@ themeIcon.addEventListener('click', () => {
   localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
 });
 
-// Icon selector
+
 function getIconForWeather(temp, desc) {
   desc = desc.toLowerCase();
 
@@ -242,7 +242,6 @@ function getIconForWeather(temp, desc) {
   if (desc.includes("clear") && temp >= 30) return "bright.png";
   if (desc.includes("clear") && temp < 30) return "sunny.png";
 
-  // Fallback to temperature if none matched
   if (temp <= 0) return "snow.png";
   if (temp <= 5) return "fog.png";
   if (temp <= 10) return "wind.png";
