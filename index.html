@@ -1,33 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Weather Report</title>
-  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dynamic Weather Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="container"> 
-    <div class="weather">
-      <h1>Weather Report</h1>
-      <input type="text" id="cityInput" placeholder="Enter city name"><br>
-      <button onclick="getWeather()" value="submit" id="add">Get Weather</button>
-    </div>
-    
+  <div id="particles-js"></div>
 
-    <div id="weatherInfo">
-    <div class="wrapper">
-        <h1 id="cityoutput"></h1>
-        <p id="description"></p>
-        <p id="temp"></p>
-        <p id="wind"></p>
+  <div class="app-container">
+    <header>
+      <h1>🌦️ My Weather Dashboard</h1>
+      <div class="input-group">
+        <input type="text" id="cityInput" placeholder="Enter city name" />
+        <button id="addCityBtn">+ Add City</button>
       </div>
-    </div>
-  </div>
-  
-  <footer>
-    <p>&copy; 2024 Sudharson</p>
-  </footer>
+      <div class="theme-toggle">
+        <span id="themeIcon">🌙</span>
+      </div>      
+    </header>
 
+    <main>
+      <div id="weatherCards" class="cards-container">
+      </div>
+    </main>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Created by Sudharson</p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
