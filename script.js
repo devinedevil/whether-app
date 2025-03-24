@@ -11,6 +11,8 @@ function fetchCurrentLocationWeather() {
         const response = await fetch(url);
         const data = await response.json();
         const city = data.name + " (You)";
+        const actualCity = data.name;
+        addCityCard(displayName, data, actualCity);
         addCityCard(city, data);
       } catch (err) {
         console.error('Failed to load location weather', err);
