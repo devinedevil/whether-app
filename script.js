@@ -1,4 +1,5 @@
 const apiKey = "36aa67b655636ebb8ae7afe88e172e72"; 
+let cities = [];
 function fetchCurrentLocationWeather() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(async (position) => {
@@ -56,7 +57,8 @@ document.getElementById('addCityBtn').addEventListener('click', () => {
 function saveCities() {
   localStorage.setItem('cities', JSON.stringify(cities));
 }
-function addCityCard(city, preloadedData = null) {
+function addCityCard(city, preloadedData = null,  realCityName = null) {
+  const city = realCityName || displayName;
   const cardId = `card-${city.replace(/\s+/g, '_')}`;
   const container = document.getElementById('weatherCards');
 
